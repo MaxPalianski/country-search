@@ -40,3 +40,19 @@ export interface Country {
   borders: string[];
   description: string;
 }
+
+export type SearchStatus = 'idle' | 'loading' | 'success' | 'empty' | 'error';
+
+export interface SearchState {
+  status: SearchStatus;
+  query: string;
+  results: Country[];
+  errorMessage: string | null;
+}
+
+export type ClassifiedErrorKind = 'abort' | 'timeout' | 'http' | 'network';
+
+export interface ClassifiedError {
+  kind: ClassifiedErrorKind;
+  message: string;
+}
